@@ -1,4 +1,4 @@
-#### <center>🚧🛠️ Working here! 🛠️🚧</center>
+<p align="center">🚧🛠️ Working here! 🛠️🚧</p>
 
 # Coronavirus Self Checker
 
