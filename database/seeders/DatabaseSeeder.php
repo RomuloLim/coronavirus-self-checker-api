@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+        $this->call(DefaultSymptomsSeeder::class);
         // \App\Models\Patient::factory(10)->create();
     }
 }

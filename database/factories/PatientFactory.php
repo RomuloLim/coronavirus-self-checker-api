@@ -22,7 +22,7 @@ class PatientFactory extends Factory
             'identifier' => $this->faker->cpf(false),
             'birthdate' => $this->faker->date,
             'phone_number' => $this->faker->phoneNumber,
-            'image' => $this->faker->imageUrl
+            'image' => $this->faker->firstName()
         ];
     }
 }

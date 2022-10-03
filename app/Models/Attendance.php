@@ -29,6 +29,6 @@ class Attendance extends Model
 
     public function symptoms(): BelongsToMany
     {
-        return $this->belongsToMany(Symptom::class);
+        return $this->belongsToMany(Symptom::class)->withTimestamps();
     }
 }
