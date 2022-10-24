@@ -51,7 +51,7 @@ class PatientTest extends TestCase
     {
         $patient = Patient::factory()->create();
 
-        $response = $this->getJson('/api/patients/$patient->id');
+        $response = $this->getJson("/api/patients/$patient->id");
 
         $response->assertJson(['data' => $patient->toArray()]);
     }
@@ -74,7 +74,7 @@ class PatientTest extends TestCase
     {
         $patient = Patient::factory()->create();
 
-        $response = $this->deleteJson('/api/patients/$patient->id');
+        $response = $this->deleteJson("/api/patients/$patient->id");
 
         $response->assertJson(['message' => 'Paciente deletado com sucesso.']);
         $this->assertDatabaseMissing('patients', ['id' => $patient->id]);
