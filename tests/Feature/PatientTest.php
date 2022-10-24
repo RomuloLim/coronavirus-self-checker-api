@@ -23,11 +23,11 @@ class PatientTest extends TestCase
     {
         Storage::fake('public');
         $data = [
-            "name" => "Ricardo Reis Casanova",
-            "identifier" => "25667538814",
-            "birthdate" => "1987-09-23",
-            "phone_number" => "(71) 2181-3790",
-            "image" => UploadedFile::fake()->image('patient.png'),
+            'name' => 'Ricardo Reis Casanova',
+            'identifier' => '25667538814',
+            'birthdate' => '1987-09-23',
+            'phone_number' => '(71) 2181-3790',
+            'image' => UploadedFile::fake()->image('patient.png'),
         ];
 
         $response = $this->postJson('/api/patients', $data);
@@ -51,7 +51,7 @@ class PatientTest extends TestCase
     {
         $patient = Patient::factory()->create();
 
-        $response = $this->getJson("/api/patients/$patient->id");
+        $response = $this->getJson('/api/patients/$patient->id');
 
         $response->assertJson(['data' => $patient->toArray()]);
     }
@@ -64,7 +64,7 @@ class PatientTest extends TestCase
 //        $newName = 'Ednaldo Pereira';
 //        $assertion = [...$patient->toArray(), 'name' => $newName];
 //
-//        $response = $this->putJson("/api/patients/$patient->id", ['name' => $newName]);
+//        $response = $this->putJson('/api/patients/$patient->id', ['name' => $newName]);
 //
 //        $response->assertJson(['data' => $assertion]);
 //        $this->assertDatabaseMissing('patients', ['id' => $patient->id, 'name' => $oldName]);
@@ -74,7 +74,7 @@ class PatientTest extends TestCase
     {
         $patient = Patient::factory()->create();
 
-        $response = $this->deleteJson("/api/patients/$patient->id");
+        $response = $this->deleteJson('/api/patients/$patient->id');
 
         $response->assertJson(['message' => 'Paciente deletado com sucesso.']);
         $this->assertDatabaseMissing('patients', ['id' => $patient->id]);
