@@ -19,6 +19,11 @@ class AttendanceResource extends JsonResource
             'patient_id' => $this->patient_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
+            'temperature' => $this->temperature,
+            'respiratory_rate' => $this->respiratory_rate,
+            'pulse' => $this->pulse,
+            'diastolic_pressure' => $this->diastolic_pressure,
+            'systolic_pressure' => $this->systolic_pressure,
             'symptoms' => $this->symptoms,
         ];
     }
